@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萌宠成长日记 - 魔法班级</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF85A1; /* 少女粉 */
+            --secondary: #77D9FF; /* 晴空蓝 */
+            --accent: #FFD93D; /* 柠檬黄 */
+            --indigo-soft: #818CF8;
+            --bg-main: #FDF4FF; /* 柔和紫粉底色 */
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--bg-main);
+            color: #4B5563;
+            overflow-x: hidden;
+            background-attachment: fixed;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 133, 161, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 80%, rgba(119, 217, 255, 0.1) 0%, transparent 20%),
+                url("https://www.transparenttextures.com/patterns/cubes.png");
+        }
+
+        .title-font {
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+
+        /* 极致可爱的卡片设计 */
+        .cute-card {
+            border-radius: 3rem;
+            border: 6px solid white;
+            box-shadow: 0 12px 0 rgba(165, 180, 252, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .cute-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 0 rgba(165, 180, 252, 0.15);
+        }
+
+        /* 气泡悬浮效果 */
+        @keyframes float-bubble {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        .floating-bubble {
+            animation: float-bubble 6s ease-in-out infinite;
+            filter: blur(1px);
+        }
+
+        .pet-bounce {
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        /* 沉浸式标题栏 */
+        .immersive-header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border-bottom: 4px solid white;
+        }
+
+        /* 按钮反馈 */
+        .cute-btn-press {
+            transition: all 0.2s;
+        }
+        .cute-btn-press:active {
+            transform: scale(0.92);
+        }
+
+        /* 滚动条美化 */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { 
+            background: linear-gradient(var(--primary), var(--secondary)); 
+            border-radius: 20px;
+            border: 3px solid white;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body>
+    <div class="fixed inset-0 overflow-hidden pointer-events-none opacity-40">
+        <div class="absolute w-64 h-64 -top-20 -left-20 bg-pink-200 rounded-full blur-3xl floating-bubble"></div>
+        <div class="absolute w-96 h-96 top-1/2 -right-20 bg-blue-200 rounded-full blur-3xl floating-bubble" style="animation-delay: -2s"></div>
+        <div class="absolute w-48 h-48 bottom-10 left-1/4 bg-yellow-100 rounded-full blur-3xl floating-bubble" style="animation-delay: -4s"></div>
+    </div>
+    <div id="root" class="relative z-10"></div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "SchoolPets",
+  "description": "An interactive classroom pet adoption system where students can customize their pets, earn points, and grow them through 10 stages.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

@@ -1,11 +1,60 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# 🐾 萌宠成长日记 - 魔法班级 (SchoolPets)
 
-  <h1>Built with AI Studio</h2>
+这是一个专为班级教学设计的互动网页应用，旨在通过趣味化的宠物养成系统，增强班级凝聚力和学生的积极性。
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## ✨ 核心功能
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+1.  **宠物领养**：每位同学可领养1只专属宠物，绑定个人信息。
+2.  **形象定制**：支持上传自定义宠物成长图集（10个阶段），支持更换形象。
+3.  **积分系统**：
+    *   老师可手动给予/扣除积分。
+    *   积分可兑换食物。
+    *   喂养宠物消耗食物+积分，促进成长。
+4.  **成长进阶**：
+    *   宠物共10个成长阶段（0-9岁）。
+    *   每个阶段形象不同，进度条清晰展示。
+5.  **荣誉海报**：宠物达到第10阶段（满级）时，自动生成含宠物形象、学生信息的荣誉海报。
+6.  **排行榜**：首页根据“积分+等级+食物”综合权重自动排序，前三名展示动态皇冠与奖牌。
+7.  **数据持久化**：使用 IndexedDB 进行本地存储，刷新页面数据不丢失。
 
-</div>
+## 🚀 快速开始
+
+### 1. 运行项目
+本项目基于 React + TypeScript。
+
+```bash
+# 安装依赖
+npm install
+
+# 启动本地开发
+npm start
+# 或
+npm run dev
+```
+
+### 2. 教师初始化
+1.  点击右上角“教师管理”。
+2.  在“形象资源库管理”中上传学生可选的头像。
+3.  在“导入自定义宠物包”中上传宠物成长的10张阶段图片（文件名建议按顺序命名）。
+4.  添加学生名单，学生即可在首页选择自己并领养宠物。
+
+## 🛠️ 技术栈
+
+*   **前端框架**: React 18
+*   **语言**: TypeScript
+*   **样式**: Tailwind CSS (CDN/Local)
+*   **图标**: SVG Icons (内联)
+*   **数据库**: IndexedDB (LocalDatabase 封装)
+
+## 📂 上传到 GitHub 指南
+
+1.  **初始化仓库**: `git init`
+2.  **添加文件**: `git add .`
+3.  **提交代码**: `git commit -m "Initial commit"`
+4.  **推送到远程**:
+    ```bash
+    git remote add origin <你的GitHub仓库地址>
+    git branch -M main
+    git push -u origin main
+    ```
